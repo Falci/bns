@@ -39,5 +39,5 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   node-arch: ${{ matrix.node_arch }}
-              run: npm install
-              run: npm test
+            - run: npm install
+            - run: npm test
