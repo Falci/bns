@@ -31,13 +31,13 @@ jobs:
                       node_arch: x86
                           - 14
 
+        name: Node ${{ matrix.node_version }} - ${{ matrix.node_arch }} on ${{ matrix.os }}
         steps:
             - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
+            - name: Setup node
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node-version }}
-            - name: Install
+                  node-arch: ${{ matrix.node_arch }}
               run: npm install
-            - name: Test
-              run: npm run test
+              run: npm test
